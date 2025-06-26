@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section
-      id="hero"
+      id="home"
       className="relative min-h-screen flex items-center justify-center px-6"
     >
       <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
@@ -65,7 +65,7 @@ export default function Hero() {
               size="lg"
               className="border-purple-500 text-purple-400 hover:bg-purple-500/10"
             >
-              <Mail className="mr-2 h-4 w-4" />
+              <Mail className="mr-2 h-4 w-4" href="#contact"/>
               Contact Me
             </Button>
           </motion.div>

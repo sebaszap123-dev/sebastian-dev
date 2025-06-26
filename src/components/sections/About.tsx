@@ -102,21 +102,21 @@ export default function About() {
                     size="sm"
                     className="border-purple-500/50 hover:bg-purple-500/10"
                   >
-                    <Github className="h-4 w-4" />
+                    <Github className="h-4 w-4" href="https://github.com/sebaszap123-dev"/>
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
                     className="border-purple-500/50 hover:bg-purple-500/10"
                   >
-                    <Linkedin className="h-4 w-4" />
+                    <Linkedin className="h-4 w-4" href="https://www.linkedin.com/in/miguel-sebastian-frausto-zapata-32a40a25a/"/>
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
                     className="border-purple-500/50 hover:bg-purple-500/10"
                   >
-                    <Mail className="h-4 w-4" />
+                    <Mail className="h-4 w-4" href="mailto:sfraustoz.dev@gmail.com"/>
                   </Button>
                 </div>
               </CardContent>
