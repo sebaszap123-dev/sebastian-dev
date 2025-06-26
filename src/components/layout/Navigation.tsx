@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const navigationItems = [
-  { name: "Hero", href: "#hero" },
+  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Skills", href: "#skills" },

@@ -17,8 +17,8 @@ export default function Contact() {
     <section id="contact" className="relative py-20 px-6">
       <div className="container mx-auto">
         <SectionHeader
-          title="Let's Connect"
-          subtitle="I'm always interested in new opportunities and collaborations. Feel free to reach out!"
+          title="Let&#39;s Connect"
+          subtitle="I&#39;m always interested in new opportunities and collaborations. Feel free to reach out!"
         />
 
         <div className="max-w-4xl mx-auto">
@@ -34,7 +34,7 @@ export default function Contact() {
                     Get in Touch
                   </CardTitle>
                   <CardDescription>
-                    Let's discuss your next project
+                    Let&#39;s discuss your next project
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
@@ -90,7 +90,7 @@ export default function Contact() {
                     Send Message
                   </CardTitle>
                   <CardDescription>
-                    I'll get back to you as soon as possible
+                    I&#39;ll get back to you as soon as possible
                   </CardDescription>
                 </CardHeader>
                 <CardContent>

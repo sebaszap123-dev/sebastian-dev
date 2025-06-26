@@ -14,7 +14,6 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -36,7 +35,7 @@ export default function About() {
               <CardContent className="p-8">
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed">
                   I currently work at Smarttie as a Python developer using
-                  Django. I'm also studying a DevOps course with certification
+                  Django. I&#39;m also studying a DevOps course with certification
                   from IBM. My journey in tech started at 8, exploring the
                   internet and hacking, and led me to complete a degree in
                   software engineering.

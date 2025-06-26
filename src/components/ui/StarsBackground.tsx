@@ -1,12 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useScroll, useTransform } from "framer-motion";
 
 export default function StarsBackground() {
-  const { scrollYProgress } = useScroll();
-  const starsY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
-
   return (
     <div className="absolute inset-0">
       {[...Array(50)].map((_, i) => (
