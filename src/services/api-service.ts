@@ -8,7 +8,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const apiClient = axios.create({
   baseURL: API_URL,
   headers: {
-    'Authorization': `Bearer ${API_KEY}`,
+    'x-api-key': API_KEY,
   },
 });
 

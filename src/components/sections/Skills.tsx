@@ -1,11 +1,17 @@
+// src/components/sections/Skills.tsx
 "use client";
 
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SectionHeader } from "@/components/ui/section-header";
-import { skills, certifications } from "@/lib/skills";
+import { skills } from "@/lib/skills";
+import { Certification } from "@/lib/types";
 
-export default function Skills() {
+interface SkillsProps {
+  certifications: Certification[];
+}
+
+export default function Skills({ certifications }: SkillsProps) {
   return (
     <section id="skills" className="relative py-20 px-6">
       <div className="container mx-auto">
@@ -91,13 +97,29 @@ export default function Skills() {
           <div className="grid md:grid-cols-2 gap-4">
             {certifications.map((cert, index) => (
               <motion.div
-                key={index}
+                key={cert.id}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="bg-slate-800/50 border border-purple-500/20 rounded-lg p-4 hover:border-purple-400/40 transition-colors"
               >
-                <p className="text-gray-300">{cert}</p>
+                <div className="flex flex-col gap-2">
+                  <h4 className="font-semibold text-white">{cert.title}</h4>
+                  <p className="text-gray-400 text-sm">{cert.issuer}</p>
+                  <p className="text-gray-500 text-xs">
+                    {cert.issue_date} {cert.expiration_date ? `- ${cert.expiration_date}` : ""}
+                  </p>
+                  {cert.credential_url && (
+                    <a
+                      href={cert.credential_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-purple-400 text-sm hover:underline"
+                    >
+                      View Credential
+                    </a>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>

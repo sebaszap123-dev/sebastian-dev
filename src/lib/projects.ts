@@ -26,7 +26,7 @@ export const projects = [
   {
     title: "Flutter E-commerce App",
     description: "Cross-platform mobile app with PDF generation and GraphQL integration for enhanced UX.",
-    technologies: ["Flutter", "Dart", "GraphQL", "Python"],
+    technologies: ["Flutter", "Dart", "Firebase", "Google Auth", "Google Drive API", "Google Cloud Storage"],
     githubUrl: "#",
     demoUrl: "#",
     featured: false,

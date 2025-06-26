@@ -6,7 +6,7 @@ export interface ExperiencePost {
     start_date: string;
     end_date: string | null;
     is_current: boolean;
-    archivements: string[];
+    achievements: string[];
     employment_type: string;
 }
 
@@ -21,6 +21,9 @@ export interface Project {
     featured: boolean;
     start_date: string | null;
     end_date: string | null;
+    live_site: boolean;
+    details: string | null;
+
 }
   
 

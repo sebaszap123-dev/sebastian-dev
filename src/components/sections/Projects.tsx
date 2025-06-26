@@ -1,3 +1,4 @@
+// src/components/sections/Projects.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -12,9 +13,13 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeader } from "@/components/ui/section-header";
-import { projects } from "@/lib/projects";
+import { Project } from "@/lib/types";
 
-export default function Projects() {
+interface ProjectsProps {
+  projects: Project[];
+}
+
+export default function Projects({ projects }: ProjectsProps) {
   return (
     <section id="projects" className="relative py-20 px-6">
       <div className="container mx-auto">
@@ -26,7 +31,7 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -47,26 +52,32 @@ export default function Projects() {
                     ))}
                   </div>
                   <div className="flex gap-2">
-                    {project.demoUrl && (
+                    {project.demo_url && (
                       <Button
                         size="sm"
                         variant="outline"
                         className="border-purple-500/50 hover:bg-purple-500/10"
+                        asChild
                       >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        {project.demoUrl.includes("betterseat")
-                          ? "Live Site"
-                          : "Demo"}
+                        <a href={project.demo_url} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          {project.live_site
+                            ? "Live Site"
+                            : "Demo"}
+                        </a>
                       </Button>
                     )}
-                    {project.githubUrl && (
+                    {project.github_url && (
                       <Button
                         size="sm"
                         variant="outline"
                         className="border-purple-500/50 hover:bg-purple-500/10"
+                        asChild
                       >
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
+                        <a href={project.github_url} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4 mr-2" />
+                          Code
+                        </a>
                       </Button>
                     )}
                   </div>

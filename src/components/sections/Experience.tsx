@@ -1,3 +1,4 @@
+// src/components/sections/Experience.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -10,9 +11,13 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeader } from "@/components/ui/section-header";
-import { experiences } from "@/lib/experiences";
+import { ExperiencePost } from "@/lib/types";
 
-export default function Experience() {
+interface ExperienceProps {
+  experiences: ExperiencePost[];
+}
+
+export default function Experience({ experiences }: ExperienceProps) {
   return (
     <section id="experience" className="relative py-20 px-6">
       <div className="container mx-auto">
@@ -24,7 +29,7 @@ export default function Experience() {
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <motion.div
-              key={index}
+              key={exp.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -45,9 +50,9 @@ export default function Experience() {
                         variant="outline"
                         className="border-purple-500/50 text-purple-300 mb-2"
                       >
-                        {exp.period}
+                        {exp.start_date} - {exp.is_current ? 'Present' : exp.end_date}
                       </Badge>
-                      <p className="text-sm text-gray-400">{exp.type}</p>
+                      <p className="text-sm text-gray-400">{exp.employment_type}</p>
                     </div>
                   </div>
                 </CardHeader>
