@@ -49,19 +49,19 @@ export default function About() {
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-purple-400" />
-                    <span>Born: September 2, 2001</span>
+                    <span className="text-gray-400">Born: September 2, 2001</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-purple-400" />
-                    <span>Colima, México</span>
+                    <span className="text-gray-400">Colima, México</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Languages className="h-4 w-4 text-purple-400" />
-                    <span>Spanish, English (B1)</span>
+                    <span className="text-gray-400">Spanish, English (B1)</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Heart className="h-4 w-4 text-purple-400" />
-                    <span>Music, Universe, Games</span>
+                    <span className="text-gray-400">Music, Universe, Games</span>
                   </div>
                 </div>
               </CardContent>
@@ -82,7 +82,7 @@ export default function About() {
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full"></div>
                   <div>
-                    <h4 className="font-semibold">Software Engineering</h4>
+                    <h4 className="font-semibold text-gray-400">Software Engineering</h4>
                     <p className="text-gray-400">
                       University of Colima • Jun 2024
                     </p>
