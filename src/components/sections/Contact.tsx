@@ -39,7 +39,7 @@ export default function Contact() {
       const form = document.getElementById("contact-form") as HTMLFormElement
       form?.reset()
     } else {
-      Swal.fire("Error", result.error || "Algo salió mal", "error")
+      Swal.fire("Error", result.success! || "Algo salió mal", "error")
     }
   }
 
@@ -47,8 +47,8 @@ export default function Contact() {
     <section id="contact" className="relative py-20 px-6">
       <div className="container mx-auto">
         <SectionHeader
-          title="Let's Connect"
-          subtitle="I'm always interested in new opportunities and collaborations. Feel free to reach out!"
+          title="Let&apos;s Connect"
+          subtitle="I&apos;m always interested in new opportunities and collaborations. Feel free to reach out!"
         />
 
         <div className="max-w-4xl mx-auto">
@@ -61,7 +61,7 @@ export default function Contact() {
               <Card className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm h-full">
                 <CardHeader>
                   <CardTitle className="text-purple-400">Get in Touch</CardTitle>
-                  <CardDescription className="text-gray-300">Let's discuss your next project</CardDescription>
+                  <CardDescription className="text-gray-300">Let&apos;s discuss your next project</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-center gap-4">
@@ -127,7 +127,7 @@ export default function Contact() {
               <Card className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm">
                 <CardHeader>
                   <CardTitle className="text-purple-400">Send Message</CardTitle>
-                  <CardDescription className="text-gray-300">I'll get back to you as soon as possible</CardDescription>
+                  <CardDescription className="text-gray-300">I&apos;ll get back to you as soon as possible</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <form
