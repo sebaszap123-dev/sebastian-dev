@@ -1,24 +1,54 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { Mail, MapPin, Github, Linkedin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { SectionHeader } from "@/components/ui/section-header";
+import { motion } from "framer-motion"
+import { Mail, MapPin, Github, Linkedin } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { SectionHeader } from "@/components/ui/section-header"
+import { useTransition } from "react"
+import Swal from "sweetalert2"
+import { sendContactForm } from "@/actions/portfolio"
 
 export default function Contact() {
+  const [isPending, startTransition] = useTransition()
+
+  const handleAction = async (formData: FormData) => {
+    const confirm = await Swal.fire({
+      title: "¿Enviar mensaje?",
+      text: "Se enviará tu mensaje a mi correo.",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Sí, enviar",
+      cancelButtonText: "Cancelar",
+    })
+
+    if (!confirm.isConfirmed) return
+
+    Swal.fire({
+      title: "Enviando...",
+      allowOutsideClick: false,
+      didOpen: () => Swal.showLoading(),
+    })
+
+    const result = await sendContactForm(formData)
+
+    Swal.close()
+
+    if (result.success) {
+      Swal.fire("¡Enviado!", "Tu mensaje fue enviado con éxito.", "success")
+      const form = document.getElementById("contact-form") as HTMLFormElement
+      form?.reset()
+    } else {
+      Swal.fire("Error", result.error || "Algo salió mal", "error")
+    }
+  }
+
   return (
     <section id="contact" className="relative py-20 px-6">
       <div className="container mx-auto">
         <SectionHeader
-          title="Let&#39;s Connect"
-          subtitle="I&#39;m always interested in new opportunities and collaborations. Feel free to reach out!"
+          title="Let's Connect"
+          subtitle="I'm always interested in new opportunities and collaborations. Feel free to reach out!"
         />
 
         <div className="max-w-4xl mx-auto">
@@ -30,12 +60,8 @@ export default function Contact() {
             >
               <Card className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm h-full">
                 <CardHeader>
-                  <CardTitle className="text-purple-400">
-                    Get in Touch
-                  </CardTitle>
-                  <CardDescription>
-                    Let&#39;s discuss your next project
-                  </CardDescription>
+                  <CardTitle className="text-purple-400">Get in Touch</CardTitle>
+                  <CardDescription className="text-gray-300">Let's discuss your next project</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-center gap-4">
@@ -43,8 +69,8 @@ export default function Contact() {
                       <Mail className="h-6 w-6 text-purple-400" />
                     </div>
                     <div>
-                      <h4 className="font-semibold">Email</h4>
-                      <p className="text-gray-400">sfraustoz.dev@gmail.com</p>
+                      <h4 className="font-semibold text-white">Email</h4>
+                      <p className="text-gray-200">sfraustoz.dev@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -52,26 +78,40 @@ export default function Contact() {
                       <MapPin className="h-6 w-6 text-purple-400" />
                     </div>
                     <div>
-                      <h4 className="font-semibold">Location</h4>
-                      <p className="text-gray-400">Colima, México</p>
+                      <h4 className="font-semibold text-white">Location</h4>
+                      <p className="text-gray-200">Colima, México</p>
                     </div>
                   </div>
                   <div className="pt-4">
-                    <h4 className="font-semibold mb-4">Follow Me</h4>
+                    <h4 className="font-semibold mb-4 text-white">Follow Me</h4>
                     <div className="flex gap-4">
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-purple-500/50 hover:bg-purple-500/10"
+                        className="border-purple-400/60 hover:bg-purple-500/20 bg-slate-700/30 text-gray-200 hover:text-white hover:border-purple-300"
+                        asChild
                       >
-                        <Github className="h-4 w-4" href="https://github.com/sebaszap123-dev/sebastian-dev"/>
+                        <a
+                          href="https://github.com/sebaszap123-dev/sebastian-dev"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="h-4 w-4" />
+                        </a>
                       </Button>
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-purple-500/50 hover:bg-purple-500/10"
+                        className="border-purple-400/60 hover:bg-purple-500/20 bg-slate-700/30 text-gray-200 hover:text-white hover:border-purple-300"
+                        asChild
                       >
-                        <Linkedin className="h-4 w-4" href="https://www.linkedin.com/in/miguel-sebastian-frausto-zapata-32a40a25a/"/>
+                        <a
+                          href="https://www.linkedin.com/in/miguel-sebastian-frausto-zapata-32a40a25a/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Linkedin className="h-4 w-4" />
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -86,38 +126,53 @@ export default function Contact() {
             >
               <Card className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="text-purple-400">
-                    Send Message
-                  </CardTitle>
-                  <CardDescription>
-                    I&#39;ll get back to you as soon as possible
-                  </CardDescription>
+                  <CardTitle className="text-purple-400">Send Message</CardTitle>
+                  <CardDescription className="text-gray-300">I'll get back to you as soon as possible</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <form className="space-y-4">
+                  <form
+                    id="contact-form"
+                    action={(formData) => {
+                      startTransition(() => handleAction(formData))
+                    }}
+                    className="space-y-4"
+                  >
                     <div>
                       <input
                         type="text"
+                        name="name"
                         placeholder="Your Name"
-                        className="w-full px-4 py-3 bg-slate-700/50 border border-purple-500/20 rounded-lg focus:border-purple-400 focus:outline-none text-white placeholder-gray-400"
+                        required
+                        disabled={isPending}
+                        className="w-full px-4 py-3 bg-slate-700/50 border border-purple-500/20 rounded-lg focus:border-purple-400 focus:outline-none text-white placeholder-gray-300 disabled:opacity-50"
                       />
                     </div>
                     <div>
                       <input
                         type="email"
+                        name="email"
                         placeholder="Your Email"
-                        className="w-full px-4 py-3 bg-slate-700/50 border border-purple-500/20 rounded-lg focus:border-purple-400 focus:outline-none text-white placeholder-gray-400"
+                        required
+                        disabled={isPending}
+                        className="w-full px-4 py-3 bg-slate-700/50 border border-purple-500/20 rounded-lg focus:border-purple-400 focus:outline-none text-white placeholder-gray-300 disabled:opacity-50"
                       />
                     </div>
                     <div>
                       <textarea
+                        name="message"
                         placeholder="Your Message"
                         rows={4}
-                        className="w-full px-4 py-3 bg-slate-700/50 border border-purple-500/20 rounded-lg focus:border-purple-400 focus:outline-none text-white placeholder-gray-400 resize-none"
+                        required
+                        disabled={isPending}
+                        className="w-full px-4 py-3 bg-slate-700/50 border border-purple-500/20 rounded-lg focus:border-purple-400 focus:outline-none text-white placeholder-gray-300 resize-none disabled:opacity-50"
                       />
                     </div>
-                    <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
-                      Send Message
+                    <Button
+                      type="submit"
+                      disabled={isPending}
+                      className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:opacity-50"
+                    >
+                      {isPending ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 </CardContent>
@@ -127,5 +182,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  );
+  )
 }

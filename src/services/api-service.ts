@@ -1,5 +1,5 @@
 // src/services/api-service.ts
-import { Certification, ExperiencePost, Project } from '@/lib/types';
+import { Certification, ContactForm, ContactResponse, ExperiencePost, Project } from '@/lib/types';
 import axios from 'axios';
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
@@ -25,5 +25,17 @@ export const fetchProjects = async () => {
 
 export const fetchCertifications = async () => {
   const response = await apiClient.get<Certification[]>('/certifications');
+  return response.data;
+};
+
+export const fetchCV = async () => {
+  const response = await apiClient.get<Blob>('/cv/download', {
+    responseType: 'blob',
+  });
+  return response.data;
+};
+
+export const sendEmailGetInTouch = async (contactForm: ContactForm) => {
+  const response = await apiClient.post<ContactResponse>('/contact', contactForm);
   return response.data;
 };

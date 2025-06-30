@@ -36,3 +36,14 @@ export interface Certification {
     credential_id: string | null;
     credential_url: string | null;
 }
+
+export interface ContactForm {
+    name: string;
+    email: string;
+    message: string;
+}
+
+export interface ContactResponse {
+    ok: boolean;
+    msg: string;
+}

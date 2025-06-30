@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { fetchCV } from "@/services/api-service";
 
 export default function Hero() {
   return (
@@ -54,6 +55,12 @@ export default function Hero() {
             transition={{ delay: 0.8 }}
           >
             <Button
+            onClick={() => {
+              fetchCV().then((cv: Blob) => {
+                const url = window.URL.createObjectURL(cv);
+                window.open(url, '_blank');
+              });
+            }}
               size="lg"
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
             >
@@ -61,11 +68,14 @@ export default function Hero() {
               Download CV
             </Button>
             <Button
+            onClick={() => {
+              window.location.href = '#contact';
+            }}
               variant="outline"
               size="lg"
               className="border-purple-500 text-purple-400 hover:bg-purple-500/10"
             >
-              <Mail className="mr-2 h-4 w-4" href="#contact"/>
+              <Mail className="mr-2 h-4 w-4"/>
               Contact Me
             </Button>
           </motion.div>
