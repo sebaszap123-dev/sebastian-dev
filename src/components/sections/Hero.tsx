@@ -10,9 +10,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-6"
+      className="relative min-h-screen flex items-center justify-center px-6 pt-20 sm:pt-0"
     >
-      <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-4 sm:py-0">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
