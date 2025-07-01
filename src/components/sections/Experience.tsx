@@ -58,14 +58,27 @@ export default function Experience({ experiences }: ExperienceProps) {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-300 mb-4">{exp.description}</p>
+                  <p className="text-gray-300 mb-4">Achievements</p>
                   <ul className="space-y-2">
-                    {exp.technologies.map((achievement, i) => (
+                    {exp.technologies.achievements.map((achievement, i) => (
                       <li
                         key={i}
                         className="flex items-start gap-2 text-gray-400"
                       >
                         <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
                         <span>{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-gray-300 mb-4">Technologies</p>
+                  <ul className="space-y-2">
+                    {exp.technologies.technologies.map((tech, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-gray-400"
+                      >
+                        <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span>{tech}</span>
                       </li>
                     ))}
                   </ul>
