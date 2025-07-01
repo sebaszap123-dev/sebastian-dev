@@ -101,22 +101,25 @@ export default function About() {
                     variant="outline"
                     size="sm"
                     className="border-purple-500/50 hover:bg-purple-500/10"
+                    onClick={() => window.open("https://github.com/sebaszap123-dev", "_blank")}
                   >
-                    <Github className="h-4 w-4" href="https://github.com/sebaszap123-dev"/>
+                    <Github className="h-4 w-4"/>
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
                     className="border-purple-500/50 hover:bg-purple-500/10"
+                    onClick={() => window.open("https://www.linkedin.com/in/miguel-sebastian-frausto-zapata-32a40a25a/", "_blank")}
                   >
-                    <Linkedin className="h-4 w-4" href="https://www.linkedin.com/in/miguel-sebastian-frausto-zapata-32a40a25a/"/>
+                    <Linkedin className="h-4 w-4"/>
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
                     className="border-purple-500/50 hover:bg-purple-500/10"
+                    onClick={() => window.open("mailto:sfraustoz.dev@gmail.com", "_blank")}
                   >
-                    <Mail className="h-4 w-4" href="mailto:sfraustoz.dev@gmail.com"/>
+                    <Mail className="h-4 w-4"/>
                   </Button>
                 </div>
               </CardContent>

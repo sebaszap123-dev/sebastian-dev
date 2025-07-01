@@ -87,9 +87,9 @@ export default function Projects({ projects }: ProjectsProps) {
                         className="border-purple-500/50 hover:bg-purple-500/10"
                         asChild
                       >
-                        <a href={project.github_url} target="_blank" rel="noopener noreferrer">
+                        <a href={project.download_url} target="_blank" rel="noopener noreferrer">
                           <Download className="h-4 w-4 mr-2" />
-                          Code
+                          Download
                         </a>
                       </Button>
                     )}
