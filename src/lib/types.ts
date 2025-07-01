@@ -1,3 +1,8 @@
+
+interface TechData {
+    achievements: string[];
+    technologies: string[];
+}
 export interface ExperiencePost {
     id: number;
     title: string;
@@ -6,7 +11,7 @@ export interface ExperiencePost {
     start_date: string;
     end_date: string | null;
     is_current: boolean;
-    achievements: string[];
+    technologies: TechData;
     employment_type: string;
 }
 

@@ -59,7 +59,7 @@ export default function Experience({ experiences }: ExperienceProps) {
                 <CardContent>
                   <p className="text-gray-300 mb-4">{exp.description}</p>
                   <ul className="space-y-2">
-                    {exp.achievements.map((achievement, i) => (
+                    {exp.technologies.map((achievement, i) => (
                       <li
                         key={i}
                         className="flex items-start gap-2 text-gray-400"
