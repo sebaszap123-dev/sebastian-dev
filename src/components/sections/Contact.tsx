@@ -70,7 +70,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-white">Email</h4>
-                      <p className="text-gray-200">sfraustoz.dev@gmail.com</p>
+                      <p className="text-gray-200">contact@sebastianfrausto.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">

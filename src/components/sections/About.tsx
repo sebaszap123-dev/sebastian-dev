@@ -117,7 +117,7 @@ export default function About() {
                     variant="outline"
                     size="sm"
                     className="border-purple-500/50 hover:bg-purple-500/10"
-                    onClick={() => window.open("mailto:sfraustoz.dev@gmail.com", "_blank")}
+                    onClick={() => window.open("mailto:contact@sebastianfrausto.com", "_blank")}
                   >
                     <Mail className="h-4 w-4"/>
                   </Button>
