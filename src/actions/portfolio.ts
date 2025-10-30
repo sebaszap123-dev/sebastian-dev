@@ -1,37 +1,20 @@
 // src/actions/portfolio.ts
 'use server';
 
-import { fetchExperiencePosts, fetchProjects, fetchCertifications, sendEmailGetInTouch } from '@/services/api-service';
+import { sendEmailGetInTouch } from '@/services/api-service';
 import { ExperiencePost, Project, Certification } from '@/lib/types';
+import { experiencesData, projectsData, certificationsData } from '@/lib/data';
 
 export async function getExperiencePosts(): Promise<ExperiencePost[]> {
-  try {
-    const data = await fetchExperiencePosts();
-    return data;
-  } catch (error) {
-    console.error('Error fetching experience posts:', error);
-    return [];
-  }
+  return Promise.resolve(experiencesData);
 }
 
 export async function getProjects(): Promise<Project[]> {
-  try {
-    const data = await fetchProjects();
-    return data;
-  } catch (error) {
-    console.error('Error fetching projects:', error);
-    return [];
-  }
+  return Promise.resolve(projectsData);
 }
 
 export async function getCertifications(): Promise<Certification[]> {
-  try {
-    const data = await fetchCertifications();
-    return data;
-  } catch (error) {
-    console.error('Error fetching certifications:', error);
-    return [];
-  }
+  return Promise.resolve(certificationsData);
 }
 
 export async function sendContactForm(formData: FormData) {
