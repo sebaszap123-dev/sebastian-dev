@@ -38,9 +38,11 @@ export default function PrivacyPoliciesIndexPage() {
               key={policy.slug}
               className="rounded-xl border border-slate-700 bg-slate-900/70 p-4"
             >
-              <h2 className="text-lg font-semibold">{policy.title}</h2>
+              <h2 className="text-lg font-semibold">
+                {policy.translations.es.title}
+              </h2>
               <p className="mt-1 text-sm text-slate-300">
-                Ultima actualizacion: {policy.lastUpdated}
+                Ultima actualizacion: {policy.translations.es.lastUpdated}
               </p>
               <Link
                 href={`/aviso-legal/politicas/${policy.slug}`}
