@@ -304,6 +304,90 @@ export const privacyPolicies: PrivacyPolicyDocument[] = [
       },
     },
   },
+  {
+    slug: "privacidad-subtlepain-x8y9z0a1",
+    appSlug: "subtle",
+    contactEmail: "contact@sebastianfrausto.com",
+    owner: "Tu Nombre o Empresa",
+    translations: {
+      es: {
+        appName: "SubtlePain",
+        brand: "SubtlePain",
+        title: "Política de Privacidad - SubtlePain",
+        lastUpdated: "5 de mayo de 2026",
+        appStoreSummary: [
+          "No recopilamos ni vendemos tus datos financieros.",
+          "La base de datos de tus suscripciones vive de forma local en tu dispositivo.",
+          "Solo te pedimos permiso para enviarte notificaciones pasivo-agresivas.",
+          "No requiere creación de cuenta.",
+        ],
+        sections: [
+          {
+            title: "1. Privacidad de tus 'Crímenes Financieros'",
+            paragraphs: [
+              "SubtlePain te juzga, pero lo hace en estricto secreto. Toda la información que agregas a la aplicación (nombres de suscripciones, montos, fechas de facturación) se almacena localmente en tu teléfono mediante una base de datos SQLite interna. No subimos tu 'Medidor de Arrepentimiento' a ningún servidor en la nube.",
+            ],
+          },
+          {
+            title: "2. Permisos del Dispositivo",
+            bullets: [
+              "Notificaciones Push (Local): Solicitamos este permiso única y exclusivamente para programar alertas locales. Estas son las notificaciones que te avisan cuando se acerca un cobro o cuando un periodo de prueba gratuito está a punto de convertirse en un cargo real.",
+            ],
+          },
+          {
+            title: "3. Conexiones a Bancos y Terceros",
+            paragraphs: [
+              "SubtlePain es una herramienta de registro manual. No utilizamos APIs bancarias (como Plaid o similares) ni nos conectamos a tus tarjetas de crédito. Eres tú quien tiene que introducir manualmente el daño que le haces a tu cartera.",
+            ],
+          },
+          {
+            title: "4. Analíticas y Rastreo",
+            paragraphs: [
+              "No usamos rastreadores publicitarios entre aplicaciones (no cross-app tracking). Podríamos recolectar métricas anónimas de fallos (crash reports) estrictamente para mejorar la estabilidad de la app, sin asociarlas a tus datos financieros.",
+            ],
+          },
+        ],
+      },
+      en: {
+        appName: "SubtlePain",
+        brand: "SubtlePain",
+        title: "Privacy Policy - SubtlePain",
+        lastUpdated: "May 5, 2026",
+        appStoreSummary: [
+          "We do not collect or sell your financial data.",
+          "Your subscription database lives locally on your device.",
+          "We only ask for permission to send you passive-aggressive notifications.",
+          "No account creation required.",
+        ],
+        sections: [
+          {
+            title: "1. Privacy of your 'Financial Crimes'",
+            paragraphs: [
+              "SubtlePain judges you, but it does so in strict secrecy. All the information you add to the app (subscription names, amounts, billing dates) is stored locally on your phone using an internal SQLite database. We do not upload your 'Regret Meter' to any cloud server.",
+            ],
+          },
+          {
+            title: "2. Device Permissions",
+            bullets: [
+              "Local Push Notifications: We request this permission solely to schedule local alerts. These are the notifications that warn you when a payment is approaching or when a free trial is about to become a very real charge.",
+            ],
+          },
+          {
+            title: "3. Bank and Third-Party Connections",
+            paragraphs: [
+              "SubtlePain is a manual entry tool. We do not use banking APIs (like Plaid) and we do not connect to your credit cards. You must manually input the damage you are doing to your wallet.",
+            ],
+          },
+          {
+            title: "4. Analytics and Tracking",
+            paragraphs: [
+              "We do not use cross-app advertising trackers. We may collect anonymous crash reports strictly to improve app stability, without tying them to your personal financial data.",
+            ],
+          },
+        ],
+      },
+    },
+  }
 ];
 
 export function getPrivacyPolicyBySlug(slug: string) {

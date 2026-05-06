@@ -89,6 +89,64 @@ export const appMarketingInfos: AppMarketingInfo[] = [
       },
     },
   },
+  {
+    appSlug: "subtle",
+    appStoreUrl: "https://apps.apple.com/app/idYOUR_ID_HERE", // Reemplazar con el ID real
+    privacyPolicyUrl: "/subtle/privacidad",
+    supportUrl: "/subtle/soporte",
+    translations: {
+      es: {
+        appName: "SubtlePain",
+        brand: "SubtlePain",
+        tagline: "El dolor de ver en qué gastas. Tu nuevo entrenador financiero sádico.",
+        description:
+          "SubtlePain no es un simple rastreador de gastos. Es una aplicación con un tono sarcástico diseñada para hacerte sentir el 'dolor' de ver cómo tu dinero se esfuma silenciosamente en suscripciones que no usas. Cancela esas fugas de dinero o enfréntate al Salón del Arrepentimiento.",
+        benefits: [
+          {
+            title: "🔍 Fugas de Dinero (Money Leaks)",
+            description: "Identificamos las suscripciones 'zombie' que llevas 30 días sin usar para que dejes de regalar tu dinero.",
+          },
+          {
+            title: "⚖️ Medidor de Arrepentimiento",
+            description: "Un indicador visual (y un poco pasivo-agresivo) que te muestra exactamente qué tan mal estás administrando tu vida financiera.",
+          },
+          {
+            title: "🏆 Gamificación del Dolor",
+            description: "Desbloquea logros sarcásticos por cancelar servicios inútiles o mantener tus rachas de uso semanales justificando tus gastos.",
+          },
+          {
+            title: "📊 El Daño Total",
+            description: "Estadísticas crueles y directas que traducen tu gasto a cosas que sí importan (ej. 'Esto equivale a 50 tacos').",
+          },
+        ],
+      },
+      en: {
+        appName: "SubtlePain",
+        brand: "SubtlePain",
+        tagline: "The pain of seeing where your money goes. Your sadistic financial coach.",
+        description:
+          "SubtlePain is not just another boring expense tracker. It’s a sarcastic app designed to make you feel the 'pain' of watching your money silently slip away into unused subscriptions. Cancel those money leaks or face the Hall of Regret.",
+        benefits: [
+          {
+            title: "🔍 Money Leaks",
+            description: "We identify those 'zombie' subscriptions you haven't touched in 30 days so you can stop throwing cash into the abyss.",
+          },
+          {
+            title: "⚖️ Regret Meter",
+            description: "A highly judgmental visual indicator showing you exactly how bad your financial decisions are.",
+          },
+          {
+            title: "🏆 Gamified Punishment",
+            description: "Unlock sarcastic badges for canceling useless services or maintaining weekly streaks that justify your spending.",
+          },
+          {
+            title: "📊 The Total Damage",
+            description: "Cruel, direct statistics that translate your spending into real-world metrics (e.g., 'This equals 50 tacos').",
+          },
+        ],
+      },
+    },
+  },
 ];
 
 export function getAppMarketingInfo(slug: string) {

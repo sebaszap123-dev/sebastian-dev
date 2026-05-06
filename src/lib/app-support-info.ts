@@ -91,6 +91,66 @@ export const appSupportInfos: AppSupportInfo[] = [
       },
     },
   },
+  {
+    appSlug: "subtle",
+    contactEmail: "contact@sebastianfrausto.com",
+    platformInfo: "iOS 14.0+ / Android 11.0+",
+    privacyPolicyUrl: "/subtle/privacidad",
+    translations: {
+      es: {
+        appName: "SubtlePain",
+        brand: "SubtlePain",
+        faqs: [
+          {
+            question: "¿La aplicación cancelará mágicamente mis suscripciones?",
+            answer:
+              "No somos magos ni tenemos acceso a tu tarjeta. SubtlePain marca la suscripción como 'inactiva' en tu historial para que dejes de sentir culpa, pero tú tienes que ir como adulto responsable a cancelar el servicio directamente con Netflix, Spotify, o el gimnasio que no pisas hace meses.",
+          },
+          {
+            question: "¿Por qué la aplicación me insulta?",
+            answer:
+              "No te insultamos, te decimos la verdad. La amabilidad no salvó tu cartera antes. Nuestro tono sarcástico es una característica diseñada para generarte el 'dolor positivo' necesario para corregir tus malos hábitos financieros.",
+          },
+          {
+            question: "¿Están seguros mis datos financieros?",
+            answer:
+              "Sí. No nos conectamos a tus cuentas bancarias porque sinceramente no queremos ver eso. Todos los datos que ingresas sobre tus suscripciones se guardan localmente en tu dispositivo usando una base de datos SQLite.",
+          },
+          {
+            question: "¿Cómo funcionan las rachas (Streaks)?",
+            answer:
+              "Cada vez que haces el chequeo semanal y confirmas que SÍ usaste una suscripción, sumas un punto a tu racha. Si confiesas que no la usaste, pierdes la racha. Simple. Te obligamos a justificar por qué pagas lo que pagas.",
+          },
+        ],
+      },
+      en: {
+        appName: "SubtlePain",
+        brand: "SubtlePain",
+        faqs: [
+          {
+            question: "Will the app magically cancel my subscriptions for me?",
+            answer:
+              "We aren't wizards and we don't have your credit card. SubtlePain marks the subscription as 'inactive' in your app to stop the guilt trip, but you still have to go act like an adult and cancel the service directly with the provider.",
+          },
+          {
+            question: "Why is the app so mean to me?",
+            answer:
+              "We aren't mean, we're honest. Kindness didn't save your wallet before. Our sarcastic tone is a feature designed to give you that 'positive pain' needed to fix your terrible financial habits.",
+          },
+          {
+            question: "Is my financial data safe?",
+            answer:
+              "Yes. We don't link to your bank accounts because frankly, we don't want to see that mess. All the data you manually enter about your subscriptions is stored locally on your device using a SQLite database.",
+          },
+          {
+            question: "How do Streaks work?",
+            answer:
+              "During your weekly check, if you confirm you ACTUALLY used a subscription, your streak goes up. If you admit you didn't, you lose the streak. It forces you to justify why you keep paying for things.",
+          },
+        ],
+      },
+    },
+  }
 ];
 
 export function getAppSupportInfo(slug: string) {

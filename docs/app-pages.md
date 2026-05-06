@@ -87,7 +87,6 @@ export const privacyPolicies: PrivacyPolicyDocument[] = [
 
 ```typescript
 export const appSupportInfos: AppSupportInfo[] = [
-  // ... apps existentes ...
   {
     appSlug: "nueva-app",  // ← debe coincidir con privacy appSlug
     contactEmail: "contact@sebastianfrausto.com",
